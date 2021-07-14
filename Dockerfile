@@ -11,8 +11,6 @@ RUN yum update -y && \
     sed -i 's@^inet_interfaces = localhost@inet_interfaces = all@g' /etc/postfix/main.cf
 
 EXPOSE  587
-ENTRYPOINT [ "/usr/libexec/postfix/master" ]
-
-CMD ["-c", "/etc/postfix", "-d"]
+CMD ["/usr/libexec/postfix/master","-c", "/etc/postfix", "-d"]
 
 
